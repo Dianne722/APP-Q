@@ -35,7 +35,7 @@
             <TextView
                 android:id="@+id/xueyuan"
                 android:textColor="@color/black"
-                android:hint="学院"
+                android:hint="信息学院"
                 android:textSize="25dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
             <TextView
                 android:id="@+id/major"
                 android:textColor="@color/black"
-                android:hint="专业"
+                android:hint="计算机"
                 android:textSize="25dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
             <TextView
                 android:id="@+id/name"
                 android:textColor="@color/black"
-                android:hint="姓名"
+                android:hint="王五"
                 android:textSize="25dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
             <TextView
                 android:id="@+id/stuNumber"
                 android:textColor="@color/black"
-                android:hint="学号"
+                android:hint="1234567891"
                 android:textSize="25dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -127,7 +127,7 @@
             <TextView
                 android:id="@+id/age"
                 android:textColor="@color/black"
-                android:hint="年龄"
+                android:hint="21"
                 android:textSize="25dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -150,34 +150,36 @@
             <TextView
                 android:id="@+id/xinbie"
                 android:textColor="@color/black"
-                android:hint="性别"
+                android:hint="男"
                 android:textSize="25dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
+
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
             android:orientation="horizontal">
+
             <TextView
-                android:textColor="@color/black"
-                android:text="已选课程："
-                android:textSize="25dp"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="已选课程："
+                android:textColor="@color/black"
+                android:textSize="25dp" />
             <!-- 在布局文件中定义 Spinner -->
             <TextView
                 android:id="@+id/courses"
-                android:textColor="@color/black"
-                android:hint="已选课程"
-                android:textSize="25dp"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="计算机网络\nJava程序设计"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
         </LinearLayout>
     </LinearLayout>
 
