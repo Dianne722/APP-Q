@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ToolsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@color/primary"
+            android:text="HOME PAGE" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_weight="1"
+                android:id="@+id/card1"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardCornerRadius="12dp"
+                        app:strokeColor="@color/white"
+                        android:layout_weight="0.4"
+                        android:layout_width="28dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="@color/dashboard_item_1"
+                        android:layout_margin="4dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="9dp"
+                            android:src="@drawable/baseline_hotel_class_24"
+                            />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/chafen"
+                    android:layout_weight="1"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:text=" 学生成绩"
+                    android:textSize="22dp"
+                    android:textColor="@color/primary"
+                    />
+
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_weight="1"
+                android:id="@+id/card2"
+                android:layout_width="0dp"
+                android:layout_height="100dp">
+
+                <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="@color/white"
+                    android:layout_weight="0.4"
+                    android:layout_width="28dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="@color/dashboard_item_2"
+                    android:layout_margin="4dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="9dp"
+                        android:src="@drawable/baseline_light_mode_24"
+                        />
+                </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/xuesheng"
+                    android:layout_weight="1"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:text=" 学生管理"
+                    android:textSize="22dp"
+                    android:textColor="@color/primary"
+                    />
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardUseCompatPadding="true"
+                android:layout_weight="1"
+                android:id="@+id/card3"
+                android:layout_width="0dp"
+                android:layout_height="100dp">
+
+                <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardCornerRadius="12dp"
+                        app:strokeColor="@color/white"
+                        android:layout_weight="0.4"
+                        android:layout_width="28dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="@color/dashboard_item_3"
+                        android:layout_margin="4dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="9dp"
+                            android:src="@drawable/baseline_local_florist_24" />
+
+                    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/pai"
+                    android:layout_weight="1"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:text=" 拍一拍"
+                    android:textSize="22dp"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/primary"
+                    />
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_weight="1"
+                android:id="@+id/card4"
+                android:layout_width="0dp"
+                android:layout_height="100dp">
+
+                <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardCornerRadius="12dp"
+                        app:strokeColor="@color/white"
+                        android:layout_weight="0.4"
+                        android:layout_width="28dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="@color/dashboard_item_4"
+                        android:layout_margin="4dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="9dp"
+                            android:src="@drawable/baseline_local_police_24"
+                            />
+
+                    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/newyemian"
+                    android:layout_weight="1"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:text=" 新页面"
+                    android:textSize="22dp"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/primary"
+                    />
+
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardUseCompatPadding="true"
+                android:layout_weight="1"
+                android:id="@+id/card5"
+                android:layout_width="0dp"
+                android:layout_height="100dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardCornerRadius="12dp"
+                        app:strokeColor="@color/white"
+                        android:layout_weight="0.4"
+                        android:layout_width="28dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="@color/dashboard_item_5"
+                        android:layout_margin="4dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="9dp"
+                            android:src="@drawable/baseline_music_note_24"
+                            />
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="48dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:text=" 今日头条"
+                        android:textSize="22dp"
+                        android:layout_marginLeft="2dp"
+                        android:textColor="@color/primary"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardUseCompatPadding="true"
+                android:layout_weight="1"
+                android:id="@+id/card6"
+                android:layout_width="0dp"
+                android:layout_height="100dp">
+
+                <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardCornerRadius="12dp"
+                        app:strokeColor="@color/white"
+                        android:layout_weight="0.4"
+                        android:layout_width="28dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="@color/dashboard_item_6"
+                        android:layout_margin="4dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="9dp"
+                            android:src="@drawable/baseline_work_24"
+                            />
+
+                    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:text=" 工具箱"
+                    android:textSize="22dp"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/primary"
+                    />
+
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ht2"
+        android:id="@+id/photo"/>
+
+    <TextView
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:text="后藤"
+        android:textSize="30sp"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/photoName"/>
+    <TextView
+        android:layout_marginTop="2dp"
+        android:text="后藤一里孤独摇滚"
+        android:textSize="15sp"
+        android:layout_below="@id/photoName"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/photoInfo"/>
+
+
+</RelativeLayout>
