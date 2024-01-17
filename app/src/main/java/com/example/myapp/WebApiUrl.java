@@ -9,6 +9,8 @@ public class WebApiUrl {
 
     public static String ADD_GRADE = BASE_URL + "/grades/add";
 
+    public static String ADD_STUDENT = BASE_URL + "/students/add";
+
     public static String makeDeleteStudentUrl(long id) {
         return BASE_DELETE_STUDENT + id;
     }

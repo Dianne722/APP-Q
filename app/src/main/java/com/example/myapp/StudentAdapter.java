@@ -119,6 +119,7 @@ public class StudentAdapter extends BaseAdapter implements View.OnClickListener 
 
         @Override
         protected Integer doInBackground(String... urls) {
+            HttpConnect.deleteHttpRequest(urls[0]);
             return Integer.parseInt(urls[1]);
         }
 

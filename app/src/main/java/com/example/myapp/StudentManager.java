@@ -8,9 +8,12 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -22,6 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StudentManager extends AppCompatActivity {
 
@@ -32,7 +36,9 @@ public class StudentManager extends AppCompatActivity {
     private EditText findStuInfoEdit;
 
     private StudentAdapter adapter;
-    private ArrayList<Student> studentList = new ArrayList<>();
+    private List<Student> studentList;
+
+    private ImageView btnCamera;
 
     static int ADDCODE = 100;
     static int EDITCODE = 200;
@@ -55,6 +61,39 @@ public class StudentManager extends AppCompatActivity {
         findAllViewsById();
 
         showStudentList();
+
+        btnCamera.setOnClickListener(listener -> {
+            Intent intent = new Intent();
+            intent.setClass(this, ZCActivity.class);
+            intent.putExtra("operationType", StudentOperatorType.Add);
+            startActivity(intent);
+        });
+
+        findStuInfoEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.toString().isEmpty()) {
+                    showStudentInfo(studentList);
+                    return;
+                }
+
+                String filterId = charSequence.toString();
+                List<Student> students = studentList.stream()
+                        .filter(student -> student.getId().toString().equals(filterId))
+                        .collect(Collectors.toList());
+                showStudentInfo(students);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     @Override
@@ -66,6 +105,7 @@ public class StudentManager extends AppCompatActivity {
     private void findAllViewsById() {
         studentListView = findViewById(R.id.studentList);
         findStuInfoEdit = findViewById(R.id.findStuInfo);
+        btnCamera = findViewById(R.id.btn_camera);
     }
 
     private void showStudentInfo(List<Student> students) {
@@ -84,10 +124,10 @@ public class StudentManager extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
         protected void onPostExecute(String result) {
-            List<Student> students = JsonUtils.toBean(result, new TypeReference<List<Student>>() {});
+            studentList = JsonUtils.toBean(result, new TypeReference<List<Student>>() {});
 
-            if (students != null) {
-                showStudentInfo(students);
+            if (studentList != null) {
+                showStudentInfo(studentList);
             }
         }
     }

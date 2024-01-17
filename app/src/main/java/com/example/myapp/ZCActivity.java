@@ -109,8 +109,12 @@ public class ZCActivity extends AppCompatActivity {
                     updateStudentSelectedCourses();
 
                     Toast.makeText(getApplicationContext(), "修改成功", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), stuNumber.toString(), Toast.LENGTH_LONG).show(); //告诉你学号
+                } else if (studentOperatorType == StudentOperatorType.Add) {
+                    student = MergeUiIntoStudentObject();
+
+                    new AddStudentPostTask().execute(student);
+
+                    Toast.makeText(getApplicationContext(), "添加成功, 您的学号为: " + student.getId(), Toast.LENGTH_LONG).show(); //告诉你学号
                 }
             }
         });
@@ -161,7 +165,7 @@ public class ZCActivity extends AppCompatActivity {
         }
 
         // 设置学院
-        colleage.setSelection(student.getCollegeId());
+        colleage.setSelection(student.getCollegeId() - 1);
 
         // 设置专业
         ArrayAdapter<String> adapter = (ArrayAdapter<String>) major.getAdapter();
@@ -214,6 +218,8 @@ public class ZCActivity extends AppCompatActivity {
         newStudent.setName(name.getText().toString());
         if (studentOperatorType == StudentOperatorType.Edit) {
             newStudent.setId(student.getId());
+        } else if (studentOperatorType == StudentOperatorType.Add) {
+            newStudent.setId(GenerateStudentId());
         }
         newStudent.setAge(Integer.parseInt(age.getText().toString()));
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -288,7 +294,22 @@ public class ZCActivity extends AppCompatActivity {
         new AddGradePostTask().execute(grade);
     }
 
-    private void GenerateStudentId() {
+    private Long GenerateStudentId() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(colleage.getSelectedItemPosition() + 1);
+        stringBuilder.append(major.getSelectedItemPosition() + 1);
+        String[] dates = time_rx.getText().toString().split("-");
+        for (String date : dates) {
+            stringBuilder.append(date);
+        }
+        return Long.parseLong(stringBuilder.toString());
+    }
 
+    private class AddStudentPostTask extends AsyncTask<Student, Void, String> {
+        @RequiresApi(api = Build.VERSION_CODES.O)
+        @Override
+        protected String doInBackground(Student... students) {
+            return HttpConnect.postRequest(WebApiUrl.ADD_STUDENT, students[0]);
+        }
     }
 }
