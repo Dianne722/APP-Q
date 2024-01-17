@@ -1,5 +1,7 @@
 package com.example.myapp;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,8 +9,10 @@ public class Student implements Serializable {
     private Long id;
     private String name;
     private Integer age;
+    @JsonProperty("collegeId")
     private Integer collegeId;
     private String major;
+    @JsonProperty("enrollmentDate")
     private Date enrollmentDate;
     private String phone;
     private String password;

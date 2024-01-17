@@ -1,9 +1,13 @@
 package com.example.myapp;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 
 public class Course implements Serializable {
+    @JsonProperty("courseId")
     private Long courseId;
+    @JsonProperty("courseName")
     private String courseName;
 
     public Course() {}

@@ -34,7 +34,7 @@ public class StudentAdapter extends BaseAdapter implements View.OnClickListener 
             Intent intent = new Intent();
             intent.setClass(studentContext, ZCActivity.class);
             intent.putExtra("student", student);
-            //intent.putExtra("operationType", StuInfoOper.Edit);
+            intent.putExtra("operationType", StudentOperatorType.Edit);
             Toast.makeText(studentContext, student.getName() + ":编辑" + position,Toast.LENGTH_LONG).show();
             studentContext.startActivity(intent);
 

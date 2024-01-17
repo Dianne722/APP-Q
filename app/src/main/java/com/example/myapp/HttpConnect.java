@@ -1,10 +1,17 @@
 package com.example.myapp;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 public class HttpConnect {
 
@@ -59,4 +66,77 @@ public class HttpConnect {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static <T> String putRequest(String strUrl, T requestBodyObject) {
+        try {
+            URL url = new URL(strUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // 设置请求方法为PUT
+            connection.setRequestMethod("PUT");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setDoOutput(true);
+
+            // 将请求体转换为JSON字符串
+            String requestBodyJson = JsonUtils.toJson(requestBodyObject);
+
+            // 将JSON字符串写入请求体
+            try (OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream(), StandardCharsets.UTF_8)) {
+                writer.write(requestBodyJson);
+                writer.flush();
+            }
+
+            // 获取响应
+            InputStream input = connection.getInputStream();
+            BufferedReader in = new BufferedReader(new InputStreamReader(input));
+            String line;
+            StringBuilder response = new StringBuilder();
+
+            while ((line = in.readLine()) != null) {
+                response.append(line);
+            }
+
+            return response.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static <T> String postRequest(String strUrl, T requestBodyObject) {
+        try {
+            URL url = new URL(strUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // 设置请求方法为PUT
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setDoOutput(true);
+
+            // 将请求体转换为JSON字符串
+            String requestBodyJson = JsonUtils.toJson(requestBodyObject);
+
+            // 将JSON字符串写入请求体
+            try (OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream(), StandardCharsets.UTF_8)) {
+                writer.write(requestBodyJson);
+                writer.flush();
+            }
+
+            // 获取响应
+            InputStream input = connection.getInputStream();
+            BufferedReader in = new BufferedReader(new InputStreamReader(input));
+            String line;
+            StringBuilder response = new StringBuilder();
+
+            while ((line = in.readLine()) != null) {
+                response.append(line);
+            }
+
+            return response.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

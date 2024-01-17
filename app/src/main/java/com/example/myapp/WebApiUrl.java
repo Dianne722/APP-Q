@@ -7,11 +7,21 @@ public class WebApiUrl {
 
     public static String BASE_DELETE_STUDENT = BASE_URL + "/students/delete/";
 
+    public static String ADD_GRADE = BASE_URL + "/grades/add";
+
     public static String makeDeleteStudentUrl(long id) {
         return BASE_DELETE_STUDENT + id;
     }
 
     public static String makeListCoursesUrl(long id) {
-        return BASE_URL + "/student/" + id + "/list-courses";
+        return BASE_URL + "/students/" + id + "/list-courses";
+    }
+
+    public static String makeUpdateStudentUrl(long id) {
+        return BASE_URL + "/students/update/" + id;
+    }
+
+    public static String makeFindCourseByIdUrl(long id) {
+        return BASE_URL + "/courses/" + id;
     }
 }
