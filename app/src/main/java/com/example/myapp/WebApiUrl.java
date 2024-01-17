@@ -5,6 +5,8 @@ public class WebApiUrl {
 
     public static String STUDENT_LIST = BASE_URL + "/students/list";
 
+    public static String GRADE_LIST = BASE_URL + "/grades/list";
+
     public static String BASE_DELETE_STUDENT = BASE_URL + "/students/delete/";
 
     public static String ADD_GRADE = BASE_URL + "/grades/add";
@@ -25,5 +27,9 @@ public class WebApiUrl {
 
     public static String makeFindCourseByIdUrl(long id) {
         return BASE_URL + "/courses/" + id;
+    }
+
+    public static String makeFindScoreUrl(long studentId, long courseId) {
+        return BASE_URL + "/grades/query/" + studentId + "/" + courseId;
     }
 }

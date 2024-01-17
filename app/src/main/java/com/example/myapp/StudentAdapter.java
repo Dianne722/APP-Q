@@ -21,7 +21,7 @@ public class StudentAdapter extends BaseAdapter implements View.OnClickListener 
 
     private Context studentContext;
 
-    public StudentAdapter( Context studentContext, List<Student> studentDatas) {
+    public StudentAdapter(Context studentContext, List<Student> studentDatas) {
         this.studentDatas = studentDatas;
         this.studentContext = studentContext;
     }

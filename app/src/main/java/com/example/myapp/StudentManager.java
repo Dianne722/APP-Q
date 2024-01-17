@@ -40,9 +40,6 @@ public class StudentManager extends AppCompatActivity {
 
     private ImageView btnCamera;
 
-    static int ADDCODE = 100;
-    static int EDITCODE = 200;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
