@@ -28,51 +28,48 @@
             android:layout_height="100dp">
 
             <androidx.cardview.widget.CardView
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_weight="1"
                 android:id="@+id/card1"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
                 app:cardUseCompatPadding="true">
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="75dp">
+                    android:layout_height="75dp"
+                    android:orientation="horizontal">
 
                     <com.google.android.material.card.MaterialCardView
-                        app:cardCornerRadius="12dp"
-                        app:strokeColor="@color/white"
-                        android:layout_weight="0.4"
                         android:layout_width="28dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:layout_weight="0.4"
                         app:cardBackgroundColor="@color/dashboard_item_1"
-                        android:layout_margin="4dp">
+                        app:cardCornerRadius="12dp"
+                        app:strokeColor="@color/white">
 
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="9dp"
-                            android:src="@drawable/baseline_hotel_class_24"
-                            />
+                            android:src="@drawable/baseline_hotel_class_24" />
 
                     </com.google.android.material.card.MaterialCardView>
 
                     <TextView
                         android:id="@+id/chafen"
-                    android:layout_weight="1"
-                    android:layout_width="48dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:text=" 学生成绩"
-                    android:textSize="22dp"
-                    android:textColor="@color/primary"
-                    />
-
+                        android:layout_width="48dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text=" 学生成绩"
+                        android:textColor="@color/primary"
+                        android:textSize="22dp" />
 
 
                 </LinearLayout>
